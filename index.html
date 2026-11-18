@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>DEVICE X — Device Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">X</span><span>DEVICE<span class="brand-x"> X</span><small>THE DEVICE ENCYCLOPEDIA</small></span></a>
+      <nav><a href="#catalog">Explore</a><a href="#about">About</a></nav>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> YOUR TECH. FULLY EXPLORED.</div>
+          <h1>Know your next<br><em>device.</em></h1>
+          <p>Explore technical specifications, compare hardware and discover devices from one clean, searchable library.</p>
+          <a class="hero-cta" href="#catalog">Explore the database <span>↗</span></a>
+          <div class="hero-stats">
+            <div><strong id="totalStat">800</strong><span>DEVICE RECORDS</span></div>
+            <div><strong>2</strong><span>DEVICE CATEGORIES</span></div>
+            <div><strong>LIVE</strong><span>PHOTO LOOKUP</span></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Abstract device showcase">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="device-phone"><div class="phone-screen"><div class="screen-camera"></div><div class="screen-glow"></div><span>DEVICE<br><b>X</b></span></div></div>
+          <div class="device-laptop"><div class="laptop-screen"><div class="laptop-wall"></div><span>POWER<br>YOUR<br>IDEAS.</span></div><div class="laptop-base"></div></div>
+          <div class="floating-chip">TECH SPECS<br><b>01 / 800</b></div>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalog">
+        <div class="section-heading">
+          <div><div class="eyebrow">THE LIBRARY</div><h2>Explore devices<span class="accent">.</span></h2><p>Search by model, brand, processor or specification.</p></div>
+          <div class="source-note">DATA SOURCES <b>OPEN DATASETS</b></div>
+        </div>
+        <div class="toolbar">
+          <label class="searchbox"><span>⌕</span><input id="searchInput" placeholder="Search iPhone, Galaxy, Ryzen, 16GB RAM..." autocomplete="off"><kbd>⌘ K</kbd></label>
+          <select id="categoryFilter"><option value="all">All devices</option><option value="Smartphone">Smartphones</option><option value="Laptop">Laptops</option></select>
+          <select id="brandFilter"><option value="all">All brands</option></select>
+          <select id="sortFilter"><option value="name">Name A–Z</option><option value="brand">Brand</option></select>
+        </div>
+        <div class="status-row"><span id="loadStatus">Connecting to device datasets…</span><span id="resultCount">0 devices</span></div>
+        <div id="deviceGrid" class="device-grid">
+          <div class="loading-card"><div class="loader"></div><b>Loading the device library</b><span>Fetching public specification datasets…</span></div>
+        </div>
+        <div class="pagination"><button id="prevBtn" disabled>← Previous</button><span id="pageLabel">Page 1</span><button id="nextBtn" disabled>Next →</button></div>
+      </section>
+
+      <section class="about-strip" id="about">
+        <div><div class="eyebrow">BUILT FOR CURIOUS MINDS</div><h2>One place for<br><em>hardware clarity.</em></h2></div>
+        <p>DEVICE X brings smartphone and laptop records together in a searchable interface. Specifications come from public community datasets; always check the linked source or manufacturer page before making a purchase.</p>
+      </section>
+    </main>
+    <footer><div class="brand footer-brand"><span class="brand-mark">X</span><span>DEVICE X<small>CREATED BY OTHMAN LAMMALLAH</small></span></div><span>Explore smarter. Choose confidently.</span></footer>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <article class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </article>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
